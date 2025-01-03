@@ -15,6 +15,7 @@ local ThemeManager = {} do
 		['Quartz'] 			= { 8, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"232330","AccentColor":"426e87","BackgroundColor":"1d1b26","OutlineColor":"27232f"}') },
                 ['Spotify'] 			= { 9, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"181818","AccentColor":"1ed760","BackgroundColor":"121212","OutlineColor":"171a16"}') },
                 ['Entropy'] 		= { 10, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"3d3a43","AccentColor":"81bbe9","BackgroundColor":"302f37","OutlineColor":"373737"}') },
+                ['Interwebz'] 		= { 11, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"291f38","AccentColor":"c9654b","BackgroundColor":"1f162b","OutlineColor":"373737"}') },
 	}
 
 	function ThemeManager:ApplyTheme(theme)
