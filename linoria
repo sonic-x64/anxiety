@@ -1669,6 +1669,7 @@ do
             Size = UDim2.new(1, 0, 0, 15);
             TextSize = 12;
             Text = Info.Text;
+            FontFace = font;
             TextXAlignment = Enum.TextXAlignment.Left;
             ZIndex = 5;
             Parent = Container;
@@ -1733,7 +1734,6 @@ do
             Position = UDim2.fromOffset(0, 0),
             Size = UDim2.fromScale(5, 1),
 
-            Font = Library.Font;
             FontFace = font;
             PlaceholderColor3 = Color3.fromRGB(190, 190, 190);
             PlaceholderText = Info.Placeholder or '';
