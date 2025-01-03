@@ -169,7 +169,7 @@ function Library:CreateLabel(Properties, IsHud)
         Font = Library.Font;
         FontFace = font;
         TextColor3 = Library.FontColor;
-        TextSize = 16;
+        TextSize = 12;
         TextStrokeTransparency = 0;
     });
 
