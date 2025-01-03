@@ -17,6 +17,7 @@ local ThemeManager = {} do
                 ['Entropy'] 		= { 10, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"3d3a43","AccentColor":"81bbe9","BackgroundColor":"302f37","OutlineColor":"373737"}') },
                 ['Interwebz'] 		= { 11, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"291f38","AccentColor":"c9654b","BackgroundColor":"1f162b","OutlineColor":"373737"}') },
                 ['Dracula'] 		= { 12, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"2a2c38","AccentColor":"9a81b3","BackgroundColor":"2a2c38","OutlineColor":"202126"}') },
+                ['Youtube'] 		= {13, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"171717","AccentColor":"ff0000","BackgroundColor":"0c0c0c","OutlineColor":"373737"}') },
 	}
 
 	function ThemeManager:ApplyTheme(theme)
