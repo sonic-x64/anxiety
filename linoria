@@ -3567,10 +3567,10 @@ function Library:CreateWindow(...)
                 while Toggled and ScreenGui.Parent do
                     InputService.MouseIconEnabled = false;
 
-                    local mPos = InputService:GetMouseLocation();
+                    local mPos = game.Players.LocalPlayer:GetMouse();
 
                     cursor.BackgroundColor3 = Library.AccentColor;
-                    cursor.Position = UDim2.new(0,mPos.x,0,mPos.y + 36)
+                    cursor.Position = UDim2.new(0,mPos.x,0,mPos.y)
 
                     RenderStepped:Wait();
                 end;
