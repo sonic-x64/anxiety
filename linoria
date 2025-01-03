@@ -3570,7 +3570,7 @@ function Library:CreateWindow(...)
                     local mPos = InputService:GetMouseLocation();
 
                     cursor.BackgroundColor3 = Library.AccentColor;
-                    cursor.Position = Vector2.new(mPos.x, mPos.y)
+                    cursor.Position = UDim2.new(0,mPos.x,0,mPos.y)
 
                     RenderStepped:Wait();
                 end;
