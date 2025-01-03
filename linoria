@@ -3564,6 +3564,10 @@ function Library:CreateWindow(...)
                 cursor.ImageColor3 = Color3.fromRGB(0,133,133)
                 cursor.ZIndex = 500
 
+                function update_cursor_color(color)
+                    cursor.BackgroundColor3 = color
+                end
+
                 while Toggled and ScreenGui.Parent do
                     InputService.MouseIconEnabled = false;
 
@@ -3574,10 +3578,6 @@ function Library:CreateWindow(...)
 
                     RenderStepped:Wait();
                 end;
-
-                function Library:update_cursor_color(color)
-                    cursor.BackgroundColor3 = color
-                end
                 
                 InputService.MouseIconEnabled = State;
 
