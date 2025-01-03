@@ -9,6 +9,26 @@ local RenderStepped = RunService.RenderStepped;
 local LocalPlayer = Players.LocalPlayer;
 local Mouse = LocalPlayer:GetMouse();
 
+local font = nil
+do
+    writefile("smallest_pixel.ttf", game:HttpGet("https://github.com/f1nobe7650/other/raw/main/ProggyClean.ttf"))
+
+    local smallest_pixel = {
+        name = "SmallestPixel7",
+        faces = {
+            {
+                name = "Regular",
+                weight = Weight,
+                style = Style,
+                assetId = getcustomasset("smallest_pixel.ttf")
+            }
+        }
+    }
+
+    writefile("fontface.font", game:GetService("HttpService"):JSONEncode(smallest_pixel))
+    font = Font.new(getcustomasset("fontface.font"), Enum.FontWeight.Light)
+end;
+
 local ProtectGui = protectgui or (syn and syn.protect_gui) or (function() end);
 
 local ScreenGui = Instance.new('ScreenGui');
@@ -147,6 +167,7 @@ function Library:CreateLabel(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
         Font = Library.Font;
+        FontFace = font;
         TextColor3 = Library.FontColor;
         TextSize = 16;
         TextStrokeTransparency = 0;
