@@ -38,7 +38,7 @@ local ThemeManager = {} do
 				Options[idx]:SetValueRGB(Color3.fromHex(col))
 			end
 		end
-
+                Library:Notify("theme loaded sucessfully..", 2)
 		self:ThemeUpdate()
 	end
 
