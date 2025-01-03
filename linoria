@@ -3552,8 +3552,8 @@ function Library:CreateWindow(...)
 
                 local cursor = Instance.new("ImageLabel")
                 cursor.Name = "CursorImage"
-                cursor.Parent = ScreenGui
-                cursor.Size = UDim2.new(0,18,0,18)
+                cursor.Parent = CoreGui
+                cursor.Size = UDim2.new(0,16,0,16)
                 cursor.BorderColor3 = Color3.fromRGB(0,0,0)
                 cursor.BackgroundTransparency = 1
                 cursor.Position = UDim2.new(0,16,0,16)
@@ -3569,12 +3569,16 @@ function Library:CreateWindow(...)
 
                     local mPos = game.Players.LocalPlayer:GetMouse();
 
-                    cursor.BackgroundColor3 = Color3.fromRGB(8, 226, 255);
-                    cursor.Position = UDim2.new(0, mPos.x, 0, mPos.y)
+                    cursor.BackgroundColor3 = Library.AccentColor;
+                    cursor.Position = Vector2.new(mPos.x, mPos.y)
 
                     RenderStepped:Wait();
                 end;
-                
+
+                function Library:update_cursor_color(color)
+                    cursor.BackgroundColor3 = color
+                end
+
                 InputService.MouseIconEnabled = State;
 
                 cursor:Remove();
