@@ -35,6 +35,9 @@ local Options = {};
 getgenv().Toggles = Toggles;
 getgenv().Options = Options;
 
+local CoreGui = game:GetService('CoreGui')
+local ScreenGui = cloneref(CoreGui)
+
 local Library = {
     Registry = {};
     RegistryMap = {};
@@ -58,7 +61,7 @@ local Library = {
     DependencyBoxes = {};
 
     Signals = {};
-    ScreenGui = gethui();
+    ScreenGui = ScreenGui;
 };
 
 local RainbowStep = 0
