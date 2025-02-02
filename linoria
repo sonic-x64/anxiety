@@ -38,7 +38,7 @@ getgenv().Options = Options;
 local ScreenGui = Instance.new('ScreenGui');
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
-ScreenGui.Parent = cloneref(game:GetService("CoreGui")
+ScreenGui.Parent = gethui();
 
 local Library = {
     Registry = {};
