@@ -772,7 +772,7 @@ function StompModule:Toggle(state)
             
             if hitPart then
                 local stompedCharacter = hitPart:FindFirstAncestorOfClass("Model")
-                if stompedCharacter and stompedCharacter:FindFirstChild("HumanoidRootPart") and stompedCharacter:FindFirstChild("BodyEffects") and stompedCharacter.BodyEffects.SDeath.Value and DhLibrary:IsAnimPlaying(playerCharacter,2816431506) then
+                if stompedCharacter and stompedCharacter:FindFirstChild("HumanoidRootPart") and stompedCharacter:FindFirstChild("BodyEffects") and stompedCharacter.BodyEffects.SDeath.Value then
                     effect(stompedCharacter)
                 end
             end
