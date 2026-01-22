@@ -807,8 +807,11 @@ local function applyColor(inst, color)
 end
 
 local function emitAll(inst)
-	for _, d in ipairs(inst:GetDescendants()) do
+	for _, d in ipairs(effect:GetDescendants()) do
 		if d:IsA("ParticleEmitter") then
+			d.Color = ColorSequence.new(effectColor)
+			table.insert(activeEmitters, d)
+	
 			local count = d:GetAttribute("EmitCount") or d.Rate or 10
 			d:Emit(count)
 		end
@@ -836,6 +839,15 @@ end
 
 function HitEffects:SetColor(color)
 	effectColor = color
+
+	for i = #activeEmitters, 1, -1 do
+		local emitter = activeEmitters[i]
+		if emitter and emitter.Parent then
+			emitter.Color = ColorSequence.new(color)
+		else
+			table.remove(activeEmitters, i)
+		end
+	end
 end
 
 function HitEffects:SetLifetime(seconds)
