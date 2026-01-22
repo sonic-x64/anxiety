@@ -9,7 +9,9 @@ local templatesCreated = false
 local enabled = true
 local effectColor = Color3.fromRGB(255, 255, 255)
 local selectedEffects = {} -- [effectName] = true
-                local effectTemplates = {}
+local activeEmitters = {}  -- <--- fix: ensure this exists
+
+local effectLifetime = 3 -- default lifetime
 
 -- ===== YOUR TEMPLATE FACTORY (UNCHANGED) =====
 local function createEffectTemplates()
@@ -806,18 +808,20 @@ local function applyColor(inst, color)
 	end
 end
 
+-- ===== EMIT PARTICLES =====
 local function emitAll(inst)
-	for _, d in ipairs(effect:GetDescendants()) do
+	for _, d in ipairs(inst:GetDescendants()) do
 		if d:IsA("ParticleEmitter") then
 			d.Color = ColorSequence.new(effectColor)
 			table.insert(activeEmitters, d)
-	
+
 			local count = d:GetAttribute("EmitCount") or d.Rate or 10
 			d:Emit(count)
 		end
 	end
 end
 
+-- ===== HIT EFFECTS API =====
 function HitEffects:SetSelectedEffects(list)
 	selectedEffects = {}
 	for _, name in ipairs(list or {}) do
@@ -857,6 +861,8 @@ end
 function HitEffects:Play(character)
 	if not character then return end
 
+	createEffectTemplates()
+
 	local root =
 		character:FindFirstChild("HumanoidRootPart")
 		or character:FindFirstChild("Torso")
@@ -883,4 +889,3 @@ function HitEffects:Play(character)
 end
 
 return HitEffects
-
