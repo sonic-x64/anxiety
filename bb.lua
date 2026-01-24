@@ -11,7 +11,7 @@ local effectColor = Color3.fromRGB(255, 255, 255)
 local selectedEffects = {} -- [effectName] = true
 local activeEmitters = {}  -- <--- fix: ensure this exists
 
-local effectLifetime = 3 -- default lifetime
+local effectLifetime = 1 -- default lifetime
 
 -- ===== YOUR TEMPLATE FACTORY (UNCHANGED) =====
 local function createEffectTemplates()
